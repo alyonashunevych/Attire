@@ -1,7 +1,1 @@
-# Використовувати символи завершення рядків LF для цих типів файлів
-*.html text eol=lf
-*.js text eol=lf
-
-# Використовувати символи завершення рядків CRLF для цих типів файлів
-*.bat text eol=crlf
-*.txt text eol=crlf
+* text=auto

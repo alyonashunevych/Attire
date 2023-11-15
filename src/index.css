@@ -1,0 +1,317 @@
+@import url('https://fonts.cdnfonts.com/css/pecita');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 92.5vw;
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 3.25vw;
+}
+
+.logo {
+    font-family: 'Pecita', sans-serif;
+    font-size: 2.925vw;
+    color: #fff;
+    line-height: normal;
+    margin-right: 2.6vw;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+.navigation {
+    display: flex;
+    gap: 1.62vw;
+    justify-self: start;
+}
+
+.link {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 0.91vw;
+    display: inline;
+    cursor: pointer;
+    position: relative;
+}
+
+.link:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 0; bottom: -0.32vw;
+    transform: scaleX(0);
+    transition: transform 0.25s;
+    transform-origin: left;
+}
+
+.link:hover:before {
+    transform: scaleX(1);
+    transition: transform 0.25s;
+}
+
+.search {
+    background-image: url('D:\3 курс\1 семестр\Техн. розроб. та прос. сайтів\attire\src\img\search.svg');
+    width: 1.29vw;
+    height: 1.2vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+}
+
+.account {
+    background-image: url('D:\3 курс\1 семестр\Техн. розроб. та прос. сайтів\attire\src\img\account.svg');
+    width: 1.17vw;
+    height: 1.2vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+}
+
+.liked {
+    background-image: url('D:\3 курс\1 семестр\Техн. розроб. та прос. сайтів\attire\src\img\heart.svg');
+    width: 1.37vw;
+    height: 1.2vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+}
+
+.basket {
+    background-image: url('D:\3 курс\1 семестр\Техн. розроб. та прос. сайтів\attire\src\img\basket.svg');
+    width: 1.1vw;
+    height: 1.2vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+}
+
+.menu {
+    gap: 1.5vw;
+    display: flex;
+}
+
+
+/* Footer */
+footer {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    padding: 4.87vw 0vw 1.29vw 2.59vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.32vw;
+
+}
+
+.footer_nav2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.32vw;
+    margin-left: -0.65vw;
+    margin-right: -0.65vw;
+}
+
+.navs {
+    display: flex;
+    flex-direction: row;
+    gap: 5.19vw;
+    margin-top: 3.89vw;
+    margin-bottom: 6.49vw;
+}
+
+.title_footer_nav {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.29vw;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 0.97vw;
+}
+
+.footer_li{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 0.91vw;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.footer_li:hover{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffffbd;
+    font-weight: 400;
+    font-size: 0.91vw;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.footer_cap {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    font-size: 0.78vw;
+}
+
+.caps {
+    display: flex;
+    flex-direction: row;
+    gap: 0.97vw;
+}
+
+/* Відео W&K */
+.vid_cont {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 4.55vw;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text_on_main {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 600;
+    font-size: 0.97vw;
+    position: relative;
+}
+
+.title_on_main {
+    text-decoration: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 5.84vw;
+    border: 0;
+}
+
+.discover_more {
+    background-color: white;
+    border: 0;
+    padding: 0.97vw 1.29vw;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.97vw;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 0.65vw;
+    cursor: pointer;
+}
+
+/* RPD */
+.rpd_block {
+    display: flex;
+    height: 50.10vw;
+    width: 32vw;
+    background: url('/src/img/RPD_on_main.png');
+    background-size: cover;
+    padding: 4vw 3.4vw;
+    gap: 1.29vw;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
+.title2_on_main {
+    text-decoration: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 4.87vw;
+    border: 0;
+    line-height: 100%;
+    margin-left: -0.37vw;
+}
+
+.rpd_block .text_on_main:before {
+    content: '';
+    width: 7.35vw;
+    height: 1.2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0; bottom: -0.32vw;
+}
+
+/* CCC */
+.ccc_block {
+    display: flex;
+    height: 50.10vw;
+    width: 54vw;
+    background: url('/src/img/CCC_on_main.png');
+    background-size: cover;
+    padding: 4vw 3.4vw;
+    gap: 1.29vw;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: flex-end;
+    margin-left: 2px;
+}
+
+.ccc_block .text_on_main:before {
+    content: '';
+    width: 7.35vw;
+    height: 1.2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0; bottom: -0.32vw;
+}
+
+.box {
+    display: flex;
+}
