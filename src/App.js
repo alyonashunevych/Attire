@@ -7,7 +7,6 @@ import WK_Video from "./components/W&K_video";
 function App() {
   return (
     <div className="App">
-
       <WK_Video/>
       <div className="box">
         <RPD/> 
