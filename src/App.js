@@ -1,21 +1,11 @@
-import CCC from "./components/CCC";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import RPD from "./components/RPD";
-import WK_Video from "./components/W&K_video";
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import { routing } from "./Routing";
 
-function App() {
-  return (
-    <div className="App">
-      <WK_Video/>
-      <div className="box">
-        <RPD/> 
-        <CCC/>
-      </div>
-      <Footer/>
-      <Header/>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return <RouterProvider router={routing} />;
+  }
 }
 
 export default App;
