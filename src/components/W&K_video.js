@@ -1,5 +1,5 @@
 import React from 'react'
-import video1 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/video/W&_video.mp4';
+import video1 from '../video/W&_video.mp4';
 import { NavLink } from 'react-router-dom';
 
 export default function WKVideo() {

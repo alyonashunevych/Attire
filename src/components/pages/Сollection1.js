@@ -1,13 +1,13 @@
 import React from 'react'
-import img1 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/img/col1img1.png';
-import img2 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/img/col1img2.png';
-import video1 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/video/col1video1.mp4';
-import img3 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/img/pexels-cottonbro-studio-9892756 1.png';
-import img4 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/img/pexels-cottonbro-studio-9896725.png';
-import video2 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/video/col1video2.mp4';
-import img5 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/img/pexels-cottonbro-studio-9892890 1.png';
-import img6 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/img/pexels-cottonbro-studio-9896800.jpg';
-import img8 from 'D:/3 курс/1 семестр/Техн. розроб. та прос. сайтів/attire/src/img/pexels-cottonbro-studio-9906669.png';
+import img1 from '../../img/col1img1.png';
+import img2 from '../../img/col1img2.png';
+import video1 from '../../video/col1video1.mp4';
+import img3 from '../../img/pexels-cottonbro-studio-9892756 1.png';
+import img4 from '../../img/pexels-cottonbro-studio-9896725.png';
+import video2 from '../../video/col1video2.mp4';
+import img5 from '../../img/pexels-cottonbro-studio-9892890 1.png';
+import img6 from '../../img/pexels-cottonbro-studio-9896800.jpg';
+import img8 from '../../img/pexels-cottonbro-studio-9906669.png';
 import {Item} from '../Item';
 
 export default function Collection1() {
