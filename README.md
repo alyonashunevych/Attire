@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `firebase deploy`
+
+Deploys (hosts) the website on the Firebase Hosting (https://attire.web.app)
+
 ### `npm start`
 
 Runs the app in the development mode.\
