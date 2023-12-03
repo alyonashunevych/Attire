@@ -6,6 +6,7 @@ import { Popup } from '../Pop-up.js';
 import popup from '../../img/pop-up size.png';
 import Sizes from '../Sizes.js';
 import { TheSame } from '../TheSame.js';
+import Bag from '../Bag.js';
 
 function ProductPage() {
   const { id, color } = useParams();
@@ -98,8 +99,12 @@ function ProductPage() {
         <p className='thesame_text'>in the same style</p>
         {/* Перевірте чи є collectionName перед викликом компоненту TheSame */}
         {collectionName && <TheSame collectionName={collectionName} currentProductId={id} />}
-
       </div>
+
+
+      {/* Як завантажиться сторінка - розкоментуй -> */}       
+      {/* <Bag product={product}/>   */}
+
     </div>
   );
 }
