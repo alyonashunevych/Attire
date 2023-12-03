@@ -5,6 +5,8 @@ import MenPage from './components/pages/MenPage';
 import Layout from './components/Layout';
 import ErrorPage from './components/pages/ErrorPage';
 import ProductPage from './components/pages/ProductPage';
+import Delivery from './components/pages/Delivery';
+import Returns from './components/pages/Returns';
 
 export const routing = createBrowserRouter([
   {
@@ -25,7 +27,15 @@ export const routing = createBrowserRouter([
         element: <Collection1 />
       },
       {
-        path: "/products/:id",
+        path: "/delivery",
+        element: <Delivery />
+      },
+      {
+        path: "/returns",
+        element: <Returns />
+      },
+      {
+        path: "/products/:id/:color",
         element: <ProductPage />
       }
     ]
