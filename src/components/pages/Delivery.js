@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Delivery() {
+    window.scrollTo(0, 0);
     return (
         <div className='content'>
             <div className="delmain">
