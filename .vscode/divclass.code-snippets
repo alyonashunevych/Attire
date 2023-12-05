@@ -1,0 +1,12 @@
+{
+	"Create <div className=''>": {
+	  "prefix": ".",
+	  "body": [
+		"<div className='${1:назвакласу}'>",
+		"\t$0",
+		"</div>"
+	  ],
+	  "description": "Create <div className='назвакласу'></div>"
+	}
+  }
+  

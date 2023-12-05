@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { db, storage } from './firebase'; // Import your firebase configuration
+import { db, storage } from './firebase.js'; // Import your firebase configuration
 
 export class Item extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ export class Item extends Component {
     return (
       <main className='items'>
         {this.state.items.map(el => (
-          <NavLink key={el.id} to={`/products/${el.id}`} className='item'>
+          <NavLink key={el.id} to={`/products/${el.id}/${el.color[0]}`} className='item'>
             <img alt='Product' src={el.img} className='item_img' />
             <div className="itembox">
               <div>
