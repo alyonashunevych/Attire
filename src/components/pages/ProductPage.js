@@ -6,7 +6,7 @@ import { Popup } from '../Pop-up.js';
 import popup from '../../img/pop-up size.png';
 import Sizes from '../Sizes.js';
 import { TheSame } from '../TheSame.js';
-import Bag from '../Bag.js';
+//import Bag from '../Bag.js';
 
 function ProductPage() {
   const { id, color } = useParams();

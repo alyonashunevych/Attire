@@ -965,7 +965,7 @@ video {
     color: rgba(0, 0, 0, 0.6);
     border: 0;
     background-color: transparent;
-    text-align: end;
+    text-align: flex-end;
 }
 
 
@@ -974,7 +974,7 @@ video {
     font-size: 0.84vw;
     font-weight: 600;
     color: black;
-    text-align: end;
+    text-align: flex-end;
     margin-top: 0.67vw;
 }
 
@@ -982,7 +982,7 @@ video {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
     margin-bottom: 1.29vw;
     margin-top: 1.94vw;
 }
