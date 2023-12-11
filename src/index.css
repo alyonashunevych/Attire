@@ -982,7 +982,7 @@ video {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
     margin-bottom: 1.29vw;
     margin-top: 1.94vw;
 }
