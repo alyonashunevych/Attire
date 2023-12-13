@@ -554,10 +554,6 @@ video {
     width: fit-content;
 }
 
-.prodimg {
-    /* width: 32.47vw; */
-
-}
 
 .prod_name {
     font-family: 'Montserrat', sans-serif;
@@ -848,7 +844,6 @@ video {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     padding-left: 10vw;
 }
 
@@ -912,7 +907,7 @@ video {
 .shop_bag {
     width: 19.48vw;
     padding: 1.62vw 1.29vw;
-    border: 1px solid rgba(0, 0, 0, 0.40);
+    border: 0.1vw solid rgba(0, 0, 0, 0.40);
     background: #FFF;
 }
 
@@ -985,4 +980,272 @@ video {
     align-items: flex-end;
     margin-bottom: 1.29vw;
     margin-top: 1.94vw;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 13vw;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 1.94vw;
+    gap: 1.29vw;
+    border: 0.1vw solid rgba(0, 0, 0, 0.40);
+}
+
+.overlay_text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.97vw;
+    font-weight: 500;
+    color: black;
+    width: max-content;
+}
+
+.overlay_butt1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.97vw;
+    font-weight: 500;
+    color: white;
+    border: none;
+    background-color: #000;
+    width: 7.82vw;
+    height: 2.59vw;
+    margin-bottom: 1.29vw;
+    cursor: pointer;
+}
+
+.overlay_butt2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.97vw;
+    font-weight: 500;
+    color: black;
+    background-color: transparent;
+    width: 7.82vw;
+    height: 2.59vw;
+    border: 0.1vw solid #000;
+    cursor: pointer;
+}
+
+.overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.login_text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.91vw;
+    font-weight: 500;
+    color: black;
+}
+
+.ques {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.62vw;
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+}
+
+.answ {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.91vw;
+    font-weight: 500;
+    color: black;
+    width: 60vw;
+}
+
+.faq-question {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-top: 4.74vw;
+}
+
+.acc_butt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 27.67vw;
+    padding: 0.9vw 1.29vw;
+    border: 0.1vw solid #000;
+}
+
+.arrow_login{
+    background-image: url('/src/img/arrow.svg');
+    width: 1.1vw;
+    height: 1.05vw;
+    background-size: contain;
+}
+
+.acc_box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.29vw;
+}
+
+.login_box2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.29vw;
+    height: 46.21vw;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.title_MA40_2 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: black;
+    font-weight: 500;
+    font-size: 2.59vw;
+    margin-bottom: 4.55vw;
+    margin-top: -1vw;
+}
+
+.title_MA40_3 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: black;
+    font-weight: 500;
+    font-size: 2.59vw;
+}
+
+.login_img1 {
+    display: flex;
+    background-image: url('/src/img/acc_img1.png');
+    background-size: cover;
+    width: 25.84vw;
+}
+
+.login_img2 {
+    display: flex;
+    background-image: url('img/acc_img2.png');
+    background-size: cover;
+    width: 25.84vw;
+}
+
+.acc_img1 {
+    display: flex;
+    background-image: url('/src/img/acc_img1_1.png');
+    background-size: cover;
+    width: 25.84vw;
+}
+
+.acc_img2 {
+    display: flex;
+    background-image: url('img/acc_img1_2.png');
+    background-size: cover;
+    width: 25.84vw;
+}
+
+.signup_img1 {
+    display: flex;
+    background-image: url('/src/img/signup_img1.png');
+    background-size: cover;
+    width: 25.84vw;
+    height: 100%;
+}
+
+.signup_img2 {
+    display: flex;
+    background-image: url('img/signup_img2.png');
+    background-size: cover;
+    width: 25.84vw;
+    height: 100%;
+}
+
+.loginmainbox {
+    display: flex;
+    flex-direction: row;
+    gap: 1.29vw;
+}
+
+
+input {
+    width: 21.37vw;
+    border: 0;
+    border-bottom: 0.1vw solid rgba(0, 0, 0, 0.60);
+    padding: 0.73vw 0;
+    margin-top: 2.59vw;
+}
+
+::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.91vw;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.60);
+}
+
+input[type] {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.91vw;
+    font-weight: 500;
+    color: black;
+    outline: none;
+}
+
+
+.acc_text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.91vw;
+    font-weight: 500;
+    color: black;
+    width: 19.74vw;
+}
+
+.accmainbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.signmainbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 56.68vw;
+    align-items: center;
+}
+
+.acc_box {
+    display: flex;
+    flex-direction: column;
+    height: 46.21vw;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.log_in_butt{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.97vw;
+    font-weight: 500;
+    width: 100%;
+    color: white;
+    background-color: black;
+    padding: 0.67vw;
+    border: 0;
+    cursor: pointer;
+    margin-top: 3.24vw;
+    text-align: center;
+}
+
+.log_in_box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.29vw;
+}
+
+.privacy {
+    color: #000;
+    text-decoration: underline;
 }

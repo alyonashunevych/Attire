@@ -1,11 +1,15 @@
 import { useRouteError } from 'react-router-dom'
 import Header from '../Header'
 import Footer from '../Footer'
+import { Helmet } from 'react-helmet';
 
 export default function ErrorPage() {
     const error = useRouteError()
     return (
         <>
+            <Helmet>
+                <title>Attire - ErrorPage</title>
+            </Helmet>
             <Header/>
             <div className='content'>
                 <div className="errorbox">

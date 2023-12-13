@@ -8,11 +8,16 @@ import video2 from '../../video/col1video2.mp4';
 import img5 from '../../img/pexels-cottonbro-studio-9892890 1.png';
 import img6 from '../../img/pexels-cottonbro-studio-9896800.jpg';
 import img8 from '../../img/pexels-cottonbro-studio-9906669.png';
-import {Item} from '../Item';
+import { Item } from '../Item';
+import { Helmet } from 'react-helmet';
 
 export default function Collection1() {
     return (
         <div className="content">
+            <Helmet>
+                <title>Attire - Warm & Knitted</title>
+            </Helmet>
+
             <div className="col1_box2">
                 <img src={img1} className='col1_img1' alt='clothes from the collection' />
 
@@ -61,7 +66,7 @@ export default function Collection1() {
                 <img src={img8} className='col1_img1' alt='clothes from the collection' />
             </div>
 
-            <div className='items_box'><Item/></div>
+            <div className='items_box'><Item /></div>
         </div>
     )
 }

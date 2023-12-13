@@ -7,6 +7,11 @@ import ErrorPage from './components/pages/ErrorPage';
 import ProductPage from './components/pages/ProductPage';
 import Delivery from './components/pages/Delivery';
 import Returns from './components/pages/Returns';
+import FAQPage from './components/pages/FAQ';
+import LogIn from './components/pages/LogIn';
+import SignUp from './components/pages/SignUp';
+import PrivacyPolicy from './components/pages/PrivacyPolicy';
+import Account from './components/pages/Account';
 
 export const routing = createBrowserRouter([
   {
@@ -33,6 +38,26 @@ export const routing = createBrowserRouter([
       {
         path: "/returns",
         element: <Returns />
+      },
+      {
+        path: "/faq",
+        element: <FAQPage />
+      },
+      {
+        path: "/login",
+        element: <LogIn />
+      },
+      {
+        path: "/signup",
+        element: <SignUp />
+      },
+      {
+        path: "/privacypolicy",
+        element: <PrivacyPolicy />
+      },
+      {
+        path: "/account",
+        element: <Account />
       },
       {
         path: "/products/:id/:color",

@@ -1,9 +1,13 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 
 export default function Delivery() {
     window.scrollTo(0, 0);
     return (
         <div className='content'>
+            <Helmet>
+                <title>Attire - Delivery</title>
+            </Helmet>
             <div className="delmain">
                 <h1 className="title_MA40">Delivery</h1>
                 <div className='del_box'>

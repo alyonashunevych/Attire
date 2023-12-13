@@ -1,9 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 
 export default function Returns() {
     window.scrollTo(0, 0);
     return (
         <div className='content'>
+            <Helmet>
+                <title>Attire - Returns</title>
+            </Helmet>
+
             <div className="delmain">
                 <h1 className="title_MA40">Returns</h1>
                 <div className='del_box'>

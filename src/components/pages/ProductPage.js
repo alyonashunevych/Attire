@@ -12,7 +12,7 @@ function ProductPage() {
   const { id, color } = useParams();
   const [product, setProduct] = useState(null);
   const [additionalImageUrls, setAdditionalImageUrls] = useState([]);
-  const [collectionName, setCollectionName] = useState(null);  // Додайте стан для зберігання collectionName
+  const [collectionName, setCollectionName] = useState(null);  
 
   useEffect(() => {
     const getProductData = async () => {
@@ -21,7 +21,7 @@ function ProductPage() {
         const data = docRef.data();
         const imageUrl = await storage.refFromURL(data.img).getDownloadURL();
         setProduct({ ...data, img: imageUrl });
-        setCollectionName(data.collection_name);  // Зберегти collectionName в стані
+        setCollectionName(data.collection_name);  
         const additionalUrls = await Promise.all(
           data.additional_img.map(async (img) => {
             return await storage.refFromURL(img).getDownloadURL();
@@ -52,7 +52,6 @@ function ProductPage() {
 
   const [modalInfoIsOpen, setModalInfoOpen] = useState(false);
 
-  // Додайте умову, перевіряючи collectionName перед передачею до компоненту TheSame
   return (
     <div className='content'>
       {product && (
@@ -97,7 +96,7 @@ function ProductPage() {
       )}
       <div className='random-products2'>
         <p className='thesame_text'>in the same style</p>
-        {/* Перевірте чи є collectionName перед викликом компоненту TheSame */}
+        {/* Перевірка чи є collectionName перед викликом компоненту TheSame */}
         {collectionName && <TheSame collectionName={collectionName} currentProductId={id} />}
       </div>
 

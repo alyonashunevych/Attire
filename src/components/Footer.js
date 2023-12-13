@@ -12,13 +12,13 @@ export default function Footer() {
           <li><NavLink to="/delivery" className='footer_li'>Delivery</NavLink></li>
           <li><NavLink to="/returns" className='footer_li'>Returns</NavLink></li>
           <li><a href="/" className='footer_li'>Size guide</a></li>
-          <li><a href="/" className='footer_li'>FAQ</a></li>
+          <li><NavLink to="/faq" className='footer_li'>FAQ</NavLink></li>
         </ul>
         <ul className='footer_nav'>
           <p className='title_footer_nav'>COMPANY</p>
           <li><a href="/" className='footer_li'>About us</a></li>
           <li><a href="/" className='footer_li'>Contact us</a></li>
-          <li><a href="/" className='footer_li'>Privacy Policy</a></li>
+          <li><NavLink to="/privacypolicy" className='footer_li'>Privacy Policy</NavLink></li>
         </ul>
         <ul className='footer_nav'>
           <p className='title_footer_nav'>women</p>
