@@ -1106,15 +1106,28 @@ video {
     justify-content: space-between;
     align-items: center;
     width: 30vw;
+    padding: 0.7vw 1.29vw;
+    border: 0.1vw solid #000;
+    cursor: pointer;
+}
+
+.acc_butt2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 43vw;
     padding: 0.9vw 1.29vw;
     border: 0.1vw solid #000;
+    cursor: pointer;
 }
 
 .arrow_login{
     background-image: url('/src/img/arrow.svg');
-    width: 1.03vw;
+    width: 1.04vw;
     height: 1.05vw;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .acc_box {
@@ -1137,7 +1150,7 @@ video {
     color: black;
     font-weight: 500;
     font-size: 2.59vw;
-    margin-bottom: 4.55vw;
+    margin-bottom: 3vw;
     margin-top: -1vw;
 }
 
