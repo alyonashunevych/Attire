@@ -29,7 +29,8 @@ export class Item extends Component {
     return (
       <main className='items'>
         {this.state.items.map(el => (
-          <NavLink key={el.id} to={`/products/${el.id}/${el.color[0]}`} className='item'>
+          // <NavLink key={el.id} to={`/products/${el.id}/${el.color[0]}/${el.sizes[0]}`} className='item'>
+          <NavLink key={el.id} to={`/products/${el.id}/${el.color[0]}/`} className='item'>
             <img alt='Product' src={el.img} className='item_img' />
             <div className="itembox">
               <div>

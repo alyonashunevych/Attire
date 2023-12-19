@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { NavLink } from 'react-router-dom';
+import { auth } from '../firebase.js';
 
 export default function SignUp() {
     const [first_name, setFirst_name] = useState('');
     const [last_name, setLast_name] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
     const handleFirstNameChange = (e) => {
         setFirst_name(e.target.value);
@@ -24,7 +26,27 @@ export default function SignUp() {
         setPassword(e.target.value);
     };
 
+    const handleSignUp = async () => {
+        try {
+            // Create a new user with email and password
+            const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+    
+            // Update the user's profile with first_name and last_name
+            await userCredential.user.updateProfile({
+                displayName: `${first_name} ${last_name}`,
+            });
+
+            await userCredential.user.sendEmailVerification();
+    
+            // If successful, you can redirect the user to a new page or perform other actions
+            console.log('User signed up successfully');
+        } catch (error) {
+            setError(error.message); // Set error message state
+        }
+    };
+
     window.scrollTo(0, 0);
+
     return (
         <div className='content'>
             <Helmet>
@@ -69,7 +91,8 @@ export default function SignUp() {
                         placeholder='Password'
                     />
                     <p className="acc_text">By creating an account, I agree to Attire's <NavLink to="/privacypolicy" className='privacy'>Privacy Policy</NavLink> and Legal Statement.</p>
-                    <button className='log_in_butt'>Continue</button>
+                    {error && <p className="error-message">{error}</p>}
+                    <button className='log_in_butt' onClick={handleSignUp}>Continue</button>
                 </div>
                 <div className='signup_img2' />
             </div>
