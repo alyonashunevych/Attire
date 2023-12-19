@@ -91,8 +91,8 @@ export default function SignUp() {
                         placeholder='Password'
                     />
                     <p className="acc_text">By creating an account, I agree to Attire's <NavLink to="/privacypolicy" className='privacy'>Privacy Policy</NavLink> and Legal Statement.</p>
-                    {error && <p className="error-message">{error}</p>}
-                    <button className='log_in_butt' onClick={handleSignUp}>Continue</button>
+                    {error && <p className="error-text">{error}</p>}
+                    <button className='log_in_butt2' onClick={handleSignUp}>Continue</button>
                 </div>
                 <div className='signup_img2' />
             </div>

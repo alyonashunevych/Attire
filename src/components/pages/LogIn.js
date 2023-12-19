@@ -78,7 +78,7 @@ export default function LogIn() {
                       Log in
                     </button>
 
-                    <button className='google_login_butt' onClick={handleGoogleLogin}>
+                    <button className='log_in_butt2' onClick={handleGoogleLogin}>
                     Log in with Google
                 </button>
                 </div>

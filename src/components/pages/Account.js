@@ -63,7 +63,7 @@ export default function Account() {
                             <div className='arrow_login' />
                         </div>
                         
-                        <button className='acc-butt' onClick={handleLogout}>
+                        <button className='log_in_butt' onClick={handleLogout}>
                             Logout
                         </button>
                     </div>
