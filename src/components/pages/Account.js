@@ -5,7 +5,9 @@ export default function Account() {
     return (
         <div className='content'>
             <Helmet>
-                <title>Attire - Log in</title>
+                <title>Attire - My account</title>
+                <meta property="og:description" content="Attire - User account"/>
+            
             </Helmet>
             <div className='accmainbox'>
                 <div className='acc_img1' />

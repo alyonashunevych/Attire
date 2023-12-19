@@ -13,7 +13,7 @@ export default function ErrorPage() {
             <Header/>
             <div className='content'>
                 <div className="errorbox">
-                    <p className='title1'>Opps!</p>
+                    <h1 className='title1'>Opps!</h1>
                     <p className='txterr'> Sorry, something went wrong</p>
                     <p className='txterr'>{error.statusText ?? error.message}</p>
                 </div>

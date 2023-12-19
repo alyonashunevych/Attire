@@ -7,13 +7,54 @@ const FAQPage = () => {
         <>
             <Helmet>
                 <meta name="description" content="Ласкаво просимо в Attire, де мода поєднується з комфортом, а стиль переплітається з доступністю. У нашому онлайн-магазині ми підбираємо різноманітну колекцію одягу та аксесуарів для жінок, чоловіків і дітей, а також чудовий вибір предметів домашнього декору." />
-                <meta name="keywords" content="Attire Online Store, New Collections, Online fashion store, Fashionable products for home, Stylish clothing for men and women, High-quality products, Latest arrivals and promotions" />
                 <title>Attire - FAQ</title>
             </Helmet>
 
             <div className='content'>
                 <div className="delmain">
-                    <h1 className='title_MA40'>Frequently Asked Questions (FAQ)</h1>
+                    <h1 className='title_MA40_Faq'>Frequently Asked Questions (FAQ)</h1>
+                    <div className='faq-question'>
+                        <div className='acc_butt'>
+                            <p className='login_text'>1. What is Attire Online Store?</p>
+                            <div className='arrow_login' />
+                        </div>
+                    </div>
+                    <div className='faq-question'>
+                        <div className='acc_butt'>
+                            <p className='login_text'>2. What can I find at the Online fashion store?</p>
+                            <div className='arrow_login' />
+                        </div>
+                    </div>
+                    <div className='faq-question'>
+                        <div className='acc_butt'>
+                            <p className='login_text'>3. What is Stylish clothing for men and women?</p>
+                            <div className='arrow_login' />
+                        </div>
+                    </div>
+                    <div className='faq-question'>
+                        <div className='acc_butt'>
+                            <p className='login_text'>4. What can I find in the new collections and fresh trends?</p>
+                            <div className='arrow_login' />
+                        </div>
+                    </div>
+                    <div className='faq-question'>
+                        <div className='acc_butt'>
+                            <p className='login_text'>5. How can I stay updated on the latest arrivals and promotions?</p>
+                            <div className='arrow_login' />
+                        </div>
+                    </div>
+                    <div className='faq-question'>
+                        <div className='acc_butt'>
+                            <p className='login_text'>6. What are Fashionable products for home?</p>
+                            <div className='arrow_login' />
+                        </div>
+                    </div>
+                    <div className='faq-question'>
+                        <div className='acc_butt'>
+                            <p className='login_text'>7. What is the commitment to High-quality products?</p>
+                            <div className='arrow_login' />
+                        </div>
+                    </div>
                     <div className='faq-question'>
                         <p className='ques'>1. What is Attire Online Store?</p>
                         <p className='answ'>Attire Online Store is an online fashion store offering a wide range of stylish clothing for both men and women.</p>
@@ -31,23 +72,15 @@ const FAQPage = () => {
                         <p className='answ'>Explore new collections and stay updated on fresh trends at Attire, offering a variety of modern styles and fashionable items for both men and women.</p>
                     </div>
                     <div className='faq-question'>
-                        <p className='ques'>5. What are International shipping services?</p>
-                        <p className='answ'>International shipping services at Attire ensure that you can enjoy our fashionable products no matter where you are located.</p>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>6. How can I stay updated on the latest arrivals and promotions?</p>
+                        <p className='ques'>5. How can I stay updated on the latest arrivals and promotions?</p>
                         <p className='answ'>Stay updated on the latest arrivals and promotions by subscribing to our newsletter or following us on social media. We regularly share updates on new arrivals and exclusive promotions.</p>
                     </div>
                     <div className='faq-question'>
-                        <p className='ques'>7. How can I Contact us?</p>
-                        <p className='answ'>You can contact us through the contact section on our website or reach out through other provided channels for assistance and inquiries.</p>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>8. What are Fashionable products for home?</p>
+                        <p className='ques'>6. What are Fashionable products for home?</p>
                         <p className='answ'>Fashionable products for home at Attire include a wide range of stylish home decor items to enhance your living space.</p>
                     </div>
                     <div className='faq-question'>
-                        <p className='ques'>9. What is the commitment to High-quality products?</p>
+                        <p className='ques'>7. What is the commitment to High-quality products?</p>
                         <p className='answ'>Attire is committed to providing high-quality products, and customer satisfaction is our top priority.</p>
                     </div>
                     <div className='faq-question'>

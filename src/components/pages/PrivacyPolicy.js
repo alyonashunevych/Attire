@@ -6,8 +6,6 @@ const PrivacyPolicy = () => {
     return (
         <>
             <Helmet>
-                <meta name="description" content="Ласкаво просимо в Attire, де мода поєднується з комфортом, а стиль переплітається з доступністю. У нашому онлайн-магазині ми підбираємо різноманітну колекцію одягу та аксесуарів для жінок, чоловіків і дітей, а також чудовий вибір предметів домашнього декору." />
-                <meta name="keywords" content="Attire Online Store, New Collections, Online fashion store, Fashionable products for home, Stylish clothing for men and women, High-quality products, Latest arrivals and promotions" />
                 <title>Attire - Privacy Policy</title>
             </Helmet>
 

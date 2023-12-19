@@ -6,7 +6,7 @@ import { Popup } from '../Pop-up.js';
 import popup from '../../img/pop-up size.png';
 import Sizes from '../Sizes.js';
 import { TheSame } from '../TheSame.js';
-//import Bag from '../Bag.js';
+import Bag from '../Bag.js';
 
 function ProductPage() {
   const { id, color } = useParams();
@@ -64,7 +64,7 @@ function ProductPage() {
           <div className='info'>
             <NavLink to="/w&k" className='prod_coll'>{product.collection_name}</NavLink>
             <div className='p_box'>
-              <p className='prod_name'>{product.product_name}</p>
+              <h1 className='prod_name'>{product.product_name}</h1>
               <p className='prod_price'>{formatCurrency(product.price)}</p>
             </div>
             <p className='prod_art'>art.{product.article}</p>
@@ -102,7 +102,7 @@ function ProductPage() {
 
 
       {/* Як завантажиться сторінка - розкоментуй -> */}       
-      {/* <Bag product={product}/>   */}
+      <Bag product={product}/>  
 
     </div>
   );

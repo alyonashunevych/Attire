@@ -16,6 +16,9 @@ export default function Collection1() {
         <div className="content">
             <Helmet>
                 <title>Attire - Warm & Knitted</title>
+                <meta property="og:description" content="Warm & Knitted - collection is an exclusive line of clothing that combines coziness,
+                            style, and practicality. This collection is designed for women who appreciate comfort and fashion
+                            simultaneously and want to look great in any weather."/>
             </Helmet>
 
             <div className="col1_box2">
@@ -25,8 +28,8 @@ export default function Collection1() {
                     <img src={img2} className='col1_img2' alt='clothes from the collection' />
 
                     <div className="col1_textbox">
-                        <p className='txt1'>Summer/Fall '23</p>
-                        <p className='title1'>Warm & Knitted</p>
+                        <h2 className='txt1'>Summer/Fall '23</h2>
+                        <h1 className='title1'>Warm & Knitted</h1>
                         <p className='txt2'>This collection is an exclusive line of clothing that combines coziness,
                             style, and practicality. This collection is designed for women who appreciate comfort and fashion
                             simultaneously and want to look great in any weather.</p>
