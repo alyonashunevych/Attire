@@ -1,15 +1,21 @@
+// Sizes.js
+
 import React from 'react';
 
-const Sizes = ({ sizes }) => {
+function Sizes({ sizes, selectedSize, setSelectedSize }) {
     return (
-        <div className='size_box'>
+        <div className='sizes'>
             {sizes.map((size, index) => (
-                <button key={index} className='size-button'>
+                <button
+                    key={index}
+                    className={`size-button ${selectedSize === size ? 'selected' : ''}`}
+                    onClick={() => setSelectedSize(size)}
+                >
                     {size}
                 </button>
             ))}
         </div>
     );
-};
+}
 
 export default Sizes;

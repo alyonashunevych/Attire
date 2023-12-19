@@ -590,12 +590,16 @@ video {
 .beige {
     width: 1.29vw;
     height: 1.29vw;
+    border: 0.5px solid rgba(0, 0, 0, 0.50);
+    border-radius: 10%;
     background-color: rgba(180, 178, 165, 1);
 }
 
 .black {
     width: 1.29vw;
     height: 1.29vw;
+    border: 0.5px solid rgba(0, 0, 0, 0.50);
+    border-radius: 10%;
     background-color: black;
 }
 
@@ -604,7 +608,17 @@ video {
     height: 1.29vw;
     background-color: white;
     border: 0.5px solid rgba(0, 0, 0, 0.50);
+    border-radius: 10%;
     background: rgba(255, 255, 255, 0.80);
+}
+
+.green {
+    width: 1.29vw;
+    height: 1.29vw;
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.50);
+    border-radius: 10%;
+    background: green;
 }
 
 .colors {
@@ -737,6 +751,13 @@ video {
 
 .size-button:active {
     background: #C9C7BA;
+}
+
+.size-button.selected {
+    background: rgba(201, 199, 186, 0.50);
+    color: black;
+
+    /* Text color for selected size */
 }
 
 .size_box {

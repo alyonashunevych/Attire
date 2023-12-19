@@ -12,6 +12,7 @@ import LogIn from './components/pages/LogIn';
 import SignUp from './components/pages/SignUp';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import Account from './components/pages/Account';
+import Bag from './components/Bag';
 
 export const routing = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ export const routing = createBrowserRouter([
       {
         path: "/products/:id/:color",
         element: <ProductPage />
+      },
+      {
+        path: "/bag",
+        element: <Bag />
       }
     ]
   }

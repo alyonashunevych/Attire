@@ -6,13 +6,16 @@ import { Popup } from '../Pop-up.js';
 import popup from '../../img/pop-up size.png';
 import Sizes from '../Sizes.js';
 import { TheSame } from '../TheSame.js';
-//import Bag from '../Bag.js';
+import Bag from '../Bag.js'; // Import the Bag component
 
 function ProductPage() {
   const { id, color } = useParams();
   const [product, setProduct] = useState(null);
   const [additionalImageUrls, setAdditionalImageUrls] = useState([]);
-  const [collectionName, setCollectionName] = useState(null);  
+  const [collectionName, setCollectionName] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [shoppingBag, setShoppingBag] = useState([]);
 
   useEffect(() => {
     const getProductData = async () => {
@@ -21,7 +24,7 @@ function ProductPage() {
         const data = docRef.data();
         const imageUrl = await storage.refFromURL(data.img).getDownloadURL();
         setProduct({ ...data, img: imageUrl });
-        setCollectionName(data.collection_name);  
+        setCollectionName(data.collection_name);
         const additionalUrls = await Promise.all(
           data.additional_img.map(async (img) => {
             return await storage.refFromURL(img).getDownloadURL();
@@ -35,8 +38,26 @@ function ProductPage() {
 
     getProductData();
 
+    // Set the selected color from the URL parameter
+    setSelectedColor(color);
+
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [id, color]);
+
+  // Function to add the current product to the shopping bag
+  const handleAddToBagClick = () => {
+    if (product && selectedSize) {
+      const newItem = {
+        id: product.id,
+        name: product.product_name,
+        color: selectedColor,
+        size: selectedSize,
+        price: product.price,
+        quantity: 1, // You can set the initial quantity here
+      };
+      setShoppingBag([...shoppingBag, newItem]);
+    }
+  };
 
   function formatCurrency(input) {
     const amount = parseFloat(input);
@@ -56,7 +77,7 @@ function ProductPage() {
     <div className='content'>
       {product && (
         <div className='prod'>
-          <div class="add_imgs">
+          <div className="add_imgs">
             {additionalImageUrls.map((url, index) => (
               <img key={index} alt='Additional Product' className='prodimg' src={url} />
             ))}
@@ -70,11 +91,17 @@ function ProductPage() {
             <p className='prod_art'>art.{product.article}</p>
             <div className='colorsbox'>
               <div className='colors'>
-                <NavLink to={`/products/${id}/${color[0]}`}><div className='beige'></div></NavLink>
-                <NavLink to={`/products/${id}/${color[1]}`}><div className='black'></div></NavLink>
-                <NavLink to={`/products/${id}/${color[2]}`}><div className='white'></div></NavLink>
+                {product.color.map((colorValue, index) => (
+                  <NavLink
+                    key={index}
+                    to={`/products/${id}/${colorValue}`}
+                    className={selectedColor === colorValue.toLowerCase() ? 'selected-color' : ''}
+                  >
+                    <div className={colorValue.toLowerCase()}></div>
+                  </NavLink>
+                ))}
               </div>
-              <p className='prod_color'>{product.color[0]}</p>
+              <p className='prod_color'>{selectedColor}</p>
             </div>
             <button className='pop-up_butt_show' onClick={() => setModalInfoOpen(true)}>
               Size guide
@@ -82,9 +109,9 @@ function ProductPage() {
             <Popup isOpen={modalInfoIsOpen} onClose={() => setModalInfoOpen(false)}>
               <img src={popup} alt='popup' className='img_popup' />
             </Popup>
-            <Sizes sizes={product.sizes} />
+            <Sizes sizes={product.sizes} setSelectedSize={setSelectedSize} selectedSize={selectedSize} />
             <div className='butt_box'>
-              <button className='add_to_bag'>Add to shopping bag</button>
+              <button className='add_to_bag' onClick={handleAddToBagClick}>Add to shopping bag</button>
               <button className='add_to_fav'></button>
             </div>
             <div className='prod_link_box'>
@@ -96,16 +123,11 @@ function ProductPage() {
       )}
       <div className='random-products2'>
         <p className='thesame_text'>in the same style</p>
-        {/* Перевірка чи є collectionName перед викликом компоненту TheSame */}
         {collectionName && <TheSame collectionName={collectionName} currentProductId={id} />}
       </div>
-
-
-      {/* Як завантажиться сторінка - розкоментуй -> */}       
-      {/* <Bag product={product}/>   */}
-
+      {/* Pass shopping bag state and function to the Bag component */}
+      {product && <Bag product={product} shoppingBag={shoppingBag} setShoppingBag={setShoppingBag} />}
     </div>
   );
 }
-
 export default ProductPage;
