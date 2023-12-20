@@ -8,13 +8,26 @@ export default function Account() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Check if the user is signed in
-        const user = auth.currentUser;
-        if (user) {
-            // User is signed in, so you can access the display name
-            setDisplayName(user.displayName);
-        }
-    }, []);
+        const fetchData = async () => {
+          try {
+            // Check if the user is signed in
+            const user = auth.currentUser;
+            if (user) {
+              // Fetch the user's display name asynchronously
+              const displayName = await user.displayName;
+              
+              // Set the display name in the component state
+              setDisplayName(displayName);
+            }
+          } catch (error) {
+            // Handle any errors that occur during the asynchronous operations
+            console.error("Error fetching user data:", error);
+          }
+        };
+      
+        fetchData();
+      }, []);
+      
 
     const handleLogout = async () => {
         try {

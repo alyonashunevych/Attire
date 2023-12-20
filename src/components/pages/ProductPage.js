@@ -54,8 +54,18 @@ function ProductPage() {
         size: selectedSize,
         price: product.price,
         quantity: 1, // You can set the initial quantity here
+        //userId: user.uid, // Associate the item with the user
       };
-      setShoppingBag([...shoppingBag, newItem]);
+
+      // Add the item to the "ShoppingBag" collection in Firestore
+      db.collection('ShoppingBag')
+        .add(newItem)
+        .then(() => {
+          console.log('Item added to shopping bag in Firestore');
+        })
+        .catch((error) => {
+          console.error('Error adding item to shopping bag:', error);
+        });
     }
   };
 

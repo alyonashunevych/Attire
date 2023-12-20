@@ -45,6 +45,10 @@ export const routing = createBrowserRouter([
         element: <FAQPage />
       },
       {
+        path:"/faq/:id",
+        element: <FAQItem />
+      },
+      {
         path: "/login",
         element: <LogIn />
       },
