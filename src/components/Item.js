@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { db, storage } from './firebase.js'; // Import your firebase configuration
+import { db, storage } from './firebase.js';
 
 export class Item extends Component {
   constructor(props) {

@@ -1,15 +1,22 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { db, storage } from './firebase.js';
+import { db } from '../firebase.js';
+import { useParams } from 'react-router-dom';
 
-const AnswerPage = ({ match }) => {
+const FAQItem = () => {
+    const { qid } = useParams();
+    console.log(qid);
     const [questionData, setQuestionData] = useState(null);
 
+    
     useEffect(() => {
-        const questionId = match.params.id;
+        const questionId = qid;
 
         const getQuestion = async () => {
             try {
+                console.log(questionId);
                 const doc = await db.collection("FAQ").doc(questionId).get();
 
                 if (doc.exists) {
@@ -24,13 +31,13 @@ const AnswerPage = ({ match }) => {
         };
 
         getQuestion();
-    }, [match.params.id]);
+    }, [qid]);
 
     if (!questionData) {
         // Додайте тут логіку, якщо дані не завантажено
         return <p>Loading...</p>;
     }
-
+    // eslint-disable-next-line
     const { que, answ, id, keywords } = questionData;
 
     return (
@@ -38,7 +45,7 @@ const AnswerPage = ({ match }) => {
             <Helmet>
                 <meta name="description" content="Ласкаво просимо в Attire, де мода поєднується з комфортом, а стиль переплітається з доступністю." />
                 <meta name="keywords" content={keywords}/>
-                <title>Attire - Answer {id}</title>
+                <title>Attire - Answer {'id'}</title>
             </Helmet>
 
             <div className='content'>
@@ -59,4 +66,4 @@ const AnswerPage = ({ match }) => {
     );
 };
 
-export default AnswerPage;
+export default FAQItem;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { db } from '../firebase.js'
 
 
@@ -104,7 +104,7 @@ const FAQPage = () => {
                 <ul>
                     {faqs.map((faq) => (
                         <li key={faq.id}>
-                            <Link to={`/faq/${faq.id}`}>{faq.que}</Link>
+                            <NavLink to={`/faq/${faq.id}/`}>{faq.que}</NavLink>
                         </li>
                     ))}
                 </ul>
@@ -114,32 +114,3 @@ const FAQPage = () => {
     );
 };
 export default FAQPage;
-
-const FAQItem = ({ match }) => {
-    const faqId = parseInt(match.params.id, 10);
-    const [faq, setFaq] = useState(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const faqsCollection = db.collection('FAQ'); // Replace 'yourCollectionName' with your Firestore collection name
-            const doc = await faqsCollection.doc(faqId.toString()).get();
-
-            if (doc.exists) {
-                setFaq(doc.data());
-            }
-        };
-
-        fetchData();
-    }, [faqId]);
-
-    if (!faq) {
-        return <div>FAQ not found</div>;
-    }
-
-    return (
-        <div>
-            <h2>{faq.que}</h2>
-            <p>{faq.answ}</p>
-        </div>
-    );
-};

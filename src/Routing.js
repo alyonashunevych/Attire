@@ -8,6 +8,7 @@ import ProductPage from './components/pages/ProductPage';
 import Delivery from './components/pages/Delivery';
 import Returns from './components/pages/Returns';
 import FAQPage from './components/pages/FAQ';
+import FAQItem from './components/pages/FAQItem';
 import LogIn from './components/pages/LogIn';
 import SignUp from './components/pages/SignUp';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
@@ -45,7 +46,7 @@ export const routing = createBrowserRouter([
         element: <FAQPage />
       },
       {
-        path:"/faq/:id",
+        path:"/faq/:qid",
         element: <FAQItem />
       },
       {
