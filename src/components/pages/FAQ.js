@@ -141,3 +141,4 @@ const FAQItem = ({ match }) => {
         </div>
     );
 };
+export default FAQPage;
