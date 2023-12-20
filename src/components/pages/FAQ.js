@@ -16,74 +16,46 @@ import { db } from '../firebase.js'
                 <div className="delmain">
                     <h1 className='title_MA40_Faq'>Frequently Asked Questions (FAQ)</h1>
                     <div className='faq-question'>
-                        <div className='acc_butt'>
+                        <div className='acc_butt2'>
                             <p className='login_text'>1. What is Attire Online Store?</p>
                             <div className='arrow_login' />
                         </div>
                     </div>
                     <div className='faq-question'>
-                        <div className='acc_butt'>
+                        <div className='acc_butt2'>
                             <p className='login_text'>2. What can I find at the Online fashion store?</p>
                             <div className='arrow_login' />
                         </div>
                     </div>
                     <div className='faq-question'>
-                        <div className='acc_butt'>
+                        <div className='acc_butt2'>
                             <p className='login_text'>3. What is Stylish clothing for men and women?</p>
                             <div className='arrow_login' />
                         </div>
                     </div>
                     <div className='faq-question'>
-                        <div className='acc_butt'>
+                        <div className='acc_butt2'>
                             <p className='login_text'>4. What can I find in the new collections and fresh trends?</p>
                             <div className='arrow_login' />
                         </div>
                     </div>
                     <div className='faq-question'>
-                        <div className='acc_butt'>
+                        <div className='acc_butt2'>
                             <p className='login_text'>5. How can I stay updated on the latest arrivals and promotions?</p>
                             <div className='arrow_login' />
                         </div>
                     </div>
                     <div className='faq-question'>
-                        <div className='acc_butt'>
+                        <div className='acc_butt2'>
                             <p className='login_text'>6. What are Fashionable products for home?</p>
                             <div className='arrow_login' />
                         </div>
                     </div>
                     <div className='faq-question'>
-                        <div className='acc_butt'>
+                        <div className='acc_butt2'>
                             <p className='login_text'>7. What is the commitment to High-quality products?</p>
                             <div className='arrow_login' />
                         </div>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>1. What is Attire Online Store?</p>
-                        <p className='answ'>Attire Online Store is an online fashion store offering a wide range of stylish clothing for both men and women.</p>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>2. What can I find at the Online fashion store?</p>
-                        <p className='answ'>The Online fashion store features new collections, fresh trends, and a variety of modern accessories and home decor items.</p>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>3. What is Stylish clothing for men and women?</p>
-                        <p className='answ'>Stylish clothing for men and women at Attire includes a diverse selection of fashionable items to suit different tastes and preferences.</p>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>4. What can I find in the new collections and fresh trends?</p>
-                        <p className='answ'>Explore new collections and stay updated on fresh trends at Attire, offering a variety of modern styles and fashionable items for both men and women.</p>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>5. How can I stay updated on the latest arrivals and promotions?</p>
-                        <p className='answ'>Stay updated on the latest arrivals and promotions by subscribing to our newsletter or following us on social media. We regularly share updates on new arrivals and exclusive promotions.</p>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>6. What are Fashionable products for home?</p>
-                        <p className='answ'>Fashionable products for home at Attire include a wide range of stylish home decor items to enhance your living space.</p>
-                    </div>
-                    <div className='faq-question'>
-                        <p className='ques'>7. What is the commitment to High-quality products?</p>
-                        <p className='answ'>Attire is committed to providing high-quality products, and customer satisfaction is our top priority.</p>
                     </div>
                     <div className='faq-question'>
                         <p className="thanks">Thank you for shopping with us!</p>
