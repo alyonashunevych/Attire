@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { db } from '../firebase.js'
 
 
@@ -112,6 +113,7 @@ const FAQPage = () => {
         </>
     );
 };
+export default FAQPage;
 
 const FAQItem = ({ match }) => {
     const faqId = parseInt(match.params.id, 10);
@@ -119,7 +121,7 @@ const FAQItem = ({ match }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const faqsCollection = firebase.firestore().collection('yourCollectionName'); // Replace 'yourCollectionName' with your Firestore collection name
+            const faqsCollection = db.collection('FAQ'); // Replace 'yourCollectionName' with your Firestore collection name
             const doc = await faqsCollection.doc(faqId.toString()).get();
 
             if (doc.exists) {
@@ -141,4 +143,3 @@ const FAQItem = ({ match }) => {
         </div>
     );
 };
-export default FAQPage;
