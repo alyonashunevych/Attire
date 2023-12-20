@@ -1122,7 +1122,7 @@ video {
     cursor: pointer;
 }
 
-.arrow_login{
+.arrow_login {
     background-image: url('/src/img/arrow.svg');
     width: 1.04vw;
     height: 1.05vw;
@@ -1276,7 +1276,7 @@ input[type] {
     align-items: flex-start;
 }
 
-.log_in_butt{
+.log_in_butt {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.97vw;
     font-weight: 500;
@@ -1290,7 +1290,7 @@ input[type] {
     text-align: center;
 }
 
-.log_in_butt2{
+.log_in_butt2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.97vw;
     font-weight: 500;
@@ -1312,4 +1312,9 @@ input[type] {
 .privacy {
     color: #000;
     text-decoration: underline;
+}
+
+.li_faq {
+    display: flex;
+    flex-direction: row;
 }
