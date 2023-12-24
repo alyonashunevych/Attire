@@ -7,8 +7,19 @@ import popup from '../../img/pop-up size.png';
 import Sizes from '../Sizes.js';
 import { TheSame } from '../TheSame.js';
 import Bag from '../Bag.js'; // Import the Bag component
+import { v4 as uuidv4 } from 'uuid';
+import { useCookies } from 'react-cookie';
 
 function ProductPage() {
+
+  const generateSessionID = () => {
+    return uuidv4();
+  };
+
+  const setSessionIDInCookie = (cookies, sessionID) => {
+    setCookie('sessionID', sessionID, { path: '/' });
+  };
+
   const { id, color } = useParams();
   const [product, setProduct] = useState(null);
   const [additionalImageUrls, setAdditionalImageUrls] = useState([]);
@@ -16,6 +27,11 @@ function ProductPage() {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [shoppingBag, setShoppingBag] = useState([]);
+  const [cookies, setCookie] = useCookies(['sessionID']);
+  // eslint-disable-next-line
+  const [sessionID, setSessionID] = useState(cookies.sessionID || generateSessionID());
+
+
 
   useEffect(() => {
     const getProductData = async () => {
@@ -58,8 +74,15 @@ function ProductPage() {
       };
 
       // Add the item to the "ShoppingBag" collection in Firestore
+
+      if (!cookies.sessionID) {
+        setSessionIDInCookie(setCookie, sessionID);
+      }
+      
+
       db.collection('ShoppingBag')
-        .add(newItem)
+        .doc(sessionID)
+        .set(newItem)
         .then(() => {
           console.log('Item added to shopping bag in Firestore');
         })

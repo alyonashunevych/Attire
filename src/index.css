@@ -935,10 +935,29 @@ video {
 }
 
 .shop_bag {
+    display: flex;
+    justify-content: space-between;
     width: 19.48vw;
-    padding: 1.62vw 1.29vw;
+    padding: 2.62vw 2.29vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
     border: 0.1vw solid rgba(0, 0, 0, 0.40);
     background: #FFF;
+    /* Centering the element */
+    margin-left: auto;
+    margin-right: auto;
+    /* Adding some additional styles for aesthetics */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+    border-radius: 10px;
+    /* Rounded corners */
+    /* Optional: transition for smooth hover effect */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shop_bag:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bag_title {
@@ -1317,4 +1336,14 @@ input[type] {
 .li_faq {
     display: flex;
     flex-direction: row;
+}
+
+.empty_bag {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.empty_bag_message {
+    font-size: 18px;
 }
