@@ -780,6 +780,34 @@ video {
     cursor: pointer;
 }
 
+.checkout{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.97vw;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    color: white;
+    padding: 0.67vw;
+    border: 0;
+    background-color: black;
+    cursor: pointer;
+    margin: 0.5vw;
+    
+}
+
+.empty_bag_button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7vw;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    color: black;
+    padding: 0.67vw;
+    border: 0;
+    cursor: pointer;
+    margin: 0.5vw;
+}
+
 .add_to_fav {
     background-image: url('img/heart.svg');
     width: 3vw;
@@ -935,11 +963,9 @@ video {
 }
 
 .shop_bag {
-    display: flex;
-    justify-content: space-between;
-    width: 19.48vw;
+    width: 25vw;
     padding: 2.62vw 2.29vw;
-    margin-top: 3vw;
+    margin-top: 6vw;
     margin-bottom: 3vw;
     border: 0.1vw solid rgba(0, 0, 0, 0.40);
     background: #FFF;
@@ -976,8 +1002,8 @@ video {
 }
 
 .bag_item_img {
-    width: 6.49vw;
-    height: 8.49vw;
+    width: 8.49vw;
+    height: 12.49vw;
 }
 
 .bag_item_info {
@@ -992,7 +1018,7 @@ video {
     font-size: 0.78vw;
     font-weight: 500;
     color: black;
-    width: 9.42vw;
+    width: 10.42vw;
 }
 
 .bag_item_text {

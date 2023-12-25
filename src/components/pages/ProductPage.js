@@ -6,7 +6,7 @@ import { Popup } from '../Pop-up.js';
 import popup from '../../img/pop-up size.png';
 import Sizes from '../Sizes.js';
 import { TheSame } from '../TheSame.js';
-import Bag from '../Bag.js'; // Import the Bag component
+//import Bag from '../Bag.js'; // Import the Bag component
 import { v4 as uuidv4 } from 'uuid';
 import { useCookies } from 'react-cookie';
 
@@ -26,7 +26,7 @@ function ProductPage() {
   const [collectionName, setCollectionName] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
-  const [shoppingBag, setShoppingBag] = useState([]);
+  //const [shoppingBag, setShoppingBag] = useState([]);
   const [cookies, setCookie] = useCookies(['sessionID']);
   // eslint-disable-next-line
   const [sessionID, setSessionID] = useState(cookies.sessionID || generateSessionID());
@@ -69,28 +69,46 @@ function ProductPage() {
         color: selectedColor,
         size: selectedSize,
         price: product.price,
-        quantity: 1, // You can set the initial quantity here
-        //userId: user.uid, // Associate the item with the user
+        img: product.img,
+        quantity: 1,
       };
-
-      // Add the item to the "ShoppingBag" collection in Firestore
-
+  
+      // Check if the sessionID cookie is set, if not, set it
       if (!cookies.sessionID) {
         setSessionIDInCookie(setCookie, sessionID);
       }
-      
-
+  
+      // Get the current shopping bag items from Firestore, if any
       db.collection('ShoppingBag')
         .doc(sessionID)
-        .set(newItem)
-        .then(() => {
-          console.log('Item added to shopping bag in Firestore');
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            // If the document exists, get the existing items and add the new item
+            const existingItems = doc.data().items || [];
+            const updatedItems = [...existingItems, newItem];
+  
+            db.collection('ShoppingBag')
+              .doc(sessionID)
+              .set({ items: updatedItems })
+              .then(() => {
+                console.log('Item added to shopping bag in Firestore');
+              });
+          } else {
+            // If the document does not exist, create a new one with the new item
+            db.collection('ShoppingBag')
+              .doc(sessionID)
+              .set({ items: [newItem] })
+              .then(() => {
+                console.log('New shopping bag created in Firestore');
+              });
+          }
         })
         .catch((error) => {
-          console.error('Error adding item to shopping bag:', error);
+          console.error('Error accessing shopping bag:', error);
         });
     }
-  };
+  };  
 
   function formatCurrency(input) {
     const amount = parseFloat(input);
@@ -159,7 +177,7 @@ function ProductPage() {
         {collectionName && <TheSame collectionName={collectionName} currentProductId={id} />}
       </div>
       {/* Pass shopping bag state and function to the Bag component */}
-      {product && <Bag product={product} shoppingBag={shoppingBag} setShoppingBag={setShoppingBag} />}
+      {/* product && <Bag product={product} shoppingBag={shoppingBag} setShoppingBag={setShoppingBag} /> */}
     </div>
   );
 }
