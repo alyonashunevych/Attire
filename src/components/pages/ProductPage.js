@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { db, storage } from '../firebase.js';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Popup } from '../Pop-up.js';
 import popup from '../../img/pop-up size.png';
 import Sizes from '../Sizes.js';
@@ -30,6 +30,7 @@ function ProductPage() {
   const [cookies, setCookie] = useCookies(['sessionID']);
   // eslint-disable-next-line
   const [sessionID, setSessionID] = useState(cookies.sessionID || generateSessionID());
+  const navigate = useNavigate();
 
 
 
@@ -107,6 +108,8 @@ function ProductPage() {
         .catch((error) => {
           console.error('Error accessing shopping bag:', error);
         });
+
+      navigate('/bag');
     }
   };  
 
