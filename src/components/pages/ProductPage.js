@@ -9,6 +9,7 @@ import { TheSame } from '../TheSame.js';
 //import Bag from '../Bag.js'; // Import the Bag component
 import { v4 as uuidv4 } from 'uuid';
 import { useCookies } from 'react-cookie';
+import Bag from '../Bag.js';
 
 function ProductPage() {
 
@@ -31,6 +32,8 @@ function ProductPage() {
   // eslint-disable-next-line
   const [sessionID, setSessionID] = useState(cookies.sessionID || generateSessionID());
   const navigate = useNavigate();
+  const [showBagOverlay, setShowBagOverlay] = useState(false);
+
 
 
 
@@ -73,12 +76,12 @@ function ProductPage() {
         img: product.img,
         quantity: 1,
       };
-  
+
       // Check if the sessionID cookie is set, if not, set it
       if (!cookies.sessionID) {
         setSessionIDInCookie(setCookie, sessionID);
       }
-  
+
       // Get the current shopping bag items from Firestore, if any
       db.collection('ShoppingBag')
         .doc(sessionID)
@@ -88,7 +91,7 @@ function ProductPage() {
             // If the document exists, get the existing items and add the new item
             const existingItems = doc.data().items || [];
             const updatedItems = [...existingItems, newItem];
-  
+
             db.collection('ShoppingBag')
               .doc(sessionID)
               .set({ items: updatedItems })
@@ -108,10 +111,9 @@ function ProductPage() {
         .catch((error) => {
           console.error('Error accessing shopping bag:', error);
         });
-
-      navigate('/bag');
+      setShowBagOverlay(true);
     }
-  };  
+  };
 
   function formatCurrency(input) {
     const amount = parseFloat(input);
@@ -126,6 +128,10 @@ function ProductPage() {
   }
 
   const [modalInfoIsOpen, setModalInfoOpen] = useState(false);
+
+  const closeBagOverlay = () => {
+    setShowBagOverlay(false);
+  };
 
   return (
     <div className='content'>
@@ -181,6 +187,9 @@ function ProductPage() {
       </div>
       {/* Pass shopping bag state and function to the Bag component */}
       {/* product && <Bag product={product} shoppingBag={shoppingBag} setShoppingBag={setShoppingBag} /> */}
+      {showBagOverlay && (
+        <Bag onClose={closeBagOverlay} />
+      )}
     </div>
   );
 }
