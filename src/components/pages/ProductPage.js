@@ -30,8 +30,7 @@ function ProductPage() {
   //const [shoppingBag, setShoppingBag] = useState([]);
   const [cookies, setCookie] = useCookies(['sessionID']);
   // eslint-disable-next-line
-  const [sessionID, setSessionID] = useState(cookies.sessionID || generateSessionID());
-  const navigate = useNavigate();
+  const [sessionID] = useState(cookies.sessionID || generateSessionID());
   const [showBagOverlay, setShowBagOverlay] = useState(false);
 
 
