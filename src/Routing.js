@@ -14,6 +14,7 @@ import SignUp from './components/pages/SignUp';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import Account from './components/pages/Account';
 import Bag from './components/Bag';
+import CheckoutPage from './components/pages/CheckoutPage';
 
 export const routing = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ export const routing = createBrowserRouter([
       {
         path: "/bag",
         element: <Bag />
+      },
+      {
+        path: "/checkout",
+        element: <CheckoutPage />
       }
     ]
   }

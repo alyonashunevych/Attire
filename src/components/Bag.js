@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { db } from './firebase.js';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Bag() {
   const [cookies, setCookie] = useCookies(['sessionID']);
@@ -8,6 +10,7 @@ export default function Bag() {
 
   const [items, setItems] = useState([]);
   const [isDocumentFound, setIsDocumentFound] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (sessionID) {
@@ -77,7 +80,7 @@ export default function Bag() {
               <p className='bag_item_title'>Subtotal</p>
               <p className='bag_item_price'>{formatCurrency(calculateSubtotal())}</p>
             </div>
-            <button className='checkout'>Checkout</button>
+            <button className='checkout' onClick={navigate('/checkout')}>Checkout</button>
             <button className='empty_bag_button' onClick={handleEmptyBag}>Empty the bag</button>
           </div>
         ) : (
