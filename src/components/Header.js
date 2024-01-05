@@ -3,9 +3,11 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { auth } from './firebase.js';
 import Overlay from './Overlay';
+import Bag from './Bag.js';
 
 export default function Header() {
     const [showOverlay, setShowOverlay] = useState(false);
+    const [showBagOverlay, setShowBagOverlay] = useState(false);
     const navigate = useNavigate();
 
     const handleOverlayToggle = () => {
@@ -30,10 +32,15 @@ export default function Header() {
         };
     };
 
-    const handleShoppingBagClick = () => {
-        // Use navigate to redirect to the shopping bag page
-        navigate('/bag');
+    const handleBagClick = () => {
+        setShowBagOverlay(true);
     };
+
+    const closeBagOverlay = () => {
+        setShowBagOverlay(false);
+    };
+
+    
 
     return (
         <>
@@ -50,11 +57,14 @@ export default function Header() {
                     <button className="search"></button>
                     <button onClick={handleAccountClick} className="account"></button>
                     <button className="liked"></button>
-                    <button onClick={handleShoppingBagClick} className="basket"></button>
+                    <button onClick={handleBagClick} className="basket"></button>
 
                 </ul>
             </header>
             {showOverlay && <Overlay onClose={handleOverlayToggle} />}
+            {showBagOverlay && (
+                <Bag onClose={closeBagOverlay}/>
+            )}
         </>
     );
 }

@@ -4,7 +4,7 @@ import { db } from './firebase.js';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function Bag() {
+export default function Bag({ onClose }) {
   const [cookies, setCookie] = useCookies(['sessionID']);
   const sessionID = cookies.sessionID;
 
@@ -49,17 +49,22 @@ export default function Bag() {
   };
   
 
-  const formatCurrency = (input) => {
+
+  function formatCurrency(input) {
     const amount = parseFloat(input);
     if (!isNaN(amount)) {
-      return `$${amount.toFixed(2)}`;
+      const formattedAmount = amount.toLocaleString('en-US', {
+        minimumFractionDigits: 1,
+      });
+      return `US$ ${formattedAmount}`;
     } else {
       return input;
     }
-  };
+  }
 
   return (
-    <div className='shop_bag'>
+    <div className='overlay'onClick={onClose}>
+      <div className='shop_bag' onClick={(e) => e.stopPropagation()}>
       <p className='bag_title'>Shopping bag ({items.length})</p>
       {isDocumentFound ? (
         items.length > 0 ? (
@@ -77,18 +82,19 @@ export default function Bag() {
               </div>
             ))}
             <div className='subt_box'>
-              <p className='bag_item_title'>Subtotal</p>
+              <p className='subt'>Subtotal</p>
               <p className='bag_item_price'>{formatCurrency(calculateSubtotal())}</p>
             </div>
             <button className='checkout' onClick={navigate('/checkout')}>Checkout</button>
             <button className='empty_bag_button' onClick={handleEmptyBag}>Empty the bag</button>
           </div>
         ) : (
-          <div className='empty_bag_message'>Your shopping bag is empty.</div>
+          <div className='bag_title'>Your shopping bag is empty.</div>
         )
       ) : (
-        <div className='empty_bag_message'>Your shopping bag is empty.</div>
+        <div className='bag_title'>Your shopping bag is empty.</div>
       )}
+    </div>
     </div>
   );
 }
