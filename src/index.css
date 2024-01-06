@@ -1384,3 +1384,64 @@ input[type] {
 .empty_bag_message {
     font-size: 18px;
 }
+
+.checkout {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 10vh;
+    margin-bottom: 3vh;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    color: black
+}
+
+.checkout-field {
+    margin-bottom: 20px;
+}
+
+.checkout-input,
+.checkout-card-element {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.97vw;
+    font-weight: 500;
+    color: white;
+    padding: 0.67vw;
+    background-color: black;
+    cursor: pointer;
+    /* margin: 0.5vw; */
+    
+}
+
+.checkout-button:hover {
+    background-color: grey;
+    color: white;
+}
+
+.error_checkout {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.card-element-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}

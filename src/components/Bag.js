@@ -85,7 +85,7 @@ export default function Bag({ onClose }) {
               <p className='subt'>Subtotal</p>
               <p className='bag_item_price'>{formatCurrency(calculateSubtotal())}</p>
             </div>
-            <button className='checkout' onClick={navigate('/checkout')}>Checkout</button>
+            <button className='checkout' onClick={() => navigate('/checkout')}>Checkout</button>
             <button className='empty_bag_button' onClick={handleEmptyBag}>Empty the bag</button>
           </div>
         ) : (

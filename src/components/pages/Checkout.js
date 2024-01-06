@@ -74,24 +74,33 @@ export default function Checkout() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="deliveryAddress">Delivery Address</label>
-        <input
-          type="text"
-          id="deliveryAddress"
-          value={deliveryAddress}
-          onChange={handleDeliveryAddressChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Card Details</label>
-        <CardElement />
-      </div>
-      {paymentError && <div className="error">{paymentError}</div>}
-      <button type="submit">Pay Now</button>
+    <form onSubmit={handleSubmit} className="checkout">
+        <h2>Checkout</h2>
+
+        <div className="checkout-field">
+            <label htmlFor="deliveryAddress">Delivery Address:</label>
+            <input
+                type="text"
+                id="deliveryAddress"  // Ensure this ID matches the htmlFor of the label
+                className="checkout-input"
+                value={deliveryAddress}
+                onChange={handleDeliveryAddressChange}
+                required
+            />
+        </div>
+
+        <div className="checkout-field">
+            <label>Card Details:</label>
+            <div className="card-element-container">
+                <CardElement className="checkout-card-element" />
+            </div>
+        </div>
+
+        {paymentError && <div className="error">{paymentError}</div>}
+        <button type="submit" className="checkout-button">Pay Now</button>
     </form>
-  );
+);
+
+
 }
 
